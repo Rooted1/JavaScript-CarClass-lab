@@ -28,12 +28,12 @@
     it("The car shoud have four (4) doors except its a Porshe or Koenigsegg", function() {
       var opel  = new Car('Opel', 'Omega 3');
       expect(opel.numOfDoors).to.equal(4);
-
+ 
       var porshe = new Car('Porshe', '911 Turbo');
       expect(porshe.numOfDoors).to.equal(2);
       porshe.drive(5);
       expect(porshe.speed).to.equal('250 km/h');
-      expect((function(){return new Car('Koenigsegg', 'Agera R');}()).numOfDoors).toBe(2);
+      expect((function(){return new Car('Koenigsegg', 'Agera R');}()).numOfDoors).to.equal(2);
     });
 
     it("The car shoud have four (4) wheels except its a type of trailer", function() {
@@ -43,7 +43,7 @@
 
       var koenigsegg = new Car('Koenigsegg', 'Agera R');
       expect(koenigsegg.numOfWheels).to.equal(4);
-      expect(koenigsegg.isSaloon).to.be.ok();
+      expect(koenigsegg.isSaloon).to.equal(true);
     });
 
     it("The Trailer should have speed 0 km/h until you put `the pedal to the metal`", function() {
